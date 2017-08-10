@@ -1,0 +1,53 @@
+textarea {
+
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    background: none;
+    resize: none;
+    border: none;
+    width: 98%;
+    height: 99%;
+    overflow: hidden;
+
+    margin-left: auto;
+    margin-right: auto;
+    
+    margin-left: 1%;
+    font-family: 'Inconsolata', monospace;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 130%;
+    color: rgb(97,97,97);
+    max-height: 300px;
+}
+
+/*.div-elements{
+
+    height: 5em;
+    width: 5em;
+    display: inline-block;
+    background-color: black;
+    border: 0.5em dotted darkblue;
+    margin-left: 0.1em;
+    margin-right: 0.1em;
+
+}*/
+
+/*li {
+    display: flex;
+    flex-direction: row;
+    margin-left: -3em;
+    height: 2%;
+}
+
+li > figure {
+    flex: 1;
+}*/
+
+/*ol > li > figure > img {
+    flex: 1;
+    height: 3em;
+    width: 3em;
+    margin-top: auto;
+    margin-bottom: auto;
+}*/
