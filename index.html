@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vegans - Babble</title>
+</head>
+<body class="page">
+
+    <header class="flex-container-upper-header"> 
+
+             
+            <figure aria-label="Babble">
+
+                <div>               
+
+                    <img src="images/Babble.gif" alt="Babble" >
+
+                </div>
+
+            </figure>
+            
+            <div aria-hidden="true">
+                
+                <!-- space between babble logo and login information -->
+
+            </div>
+            
+      
+    </header>
+
+    <section class="flex-container-sidebar-and-chat">
+
+        <h1>Vegens</h1>
+
+        <nav aria-hidden="true"> 
+            
+            <!-- side bar -->
+
+        </nav>
+
+        <main class="flex-container-chat">
+
+            <header class="chat-top-footer">
+
+                <h1>Vegans</h1>
+
+                <dl>
+                    <dt> <span>Messages count</span> <img src="images/messages.png" alt="Messages count" class="message-count"> </dt>                    
+                    <dd>
+                         <p id="js-msg-count" class="img-count-number">0</p>
+                    </dd>
+
+                    <dt> <span>User count</span> <img src="images/img-thing.png" alt="User count" class="user-count"> </dt>
+                    <dd>
+                         <p id="js-usr-count" class="img-count-number">0</p>
+                    </dd>
+
+                    <!-- Other terms and descriptions -->
+                </dl>
+                
+                
+                
+            </header>
+
+            <article aria-label="Chat" class="chat">
+
+                <ol id="js-chat-list"></ol>
+
+            </article>  
+
+            <footer class="page-footer" onkeyup="footerAdjust(this)"  id="js-page-footer" >
+
+                <form aria-label="Message for Chat"  id="js-form-footer" onkeyup="formAdjust(this)" action="http://localhost:9000" method="POST" >
+
+                        
+                    <!-- Message: -->
+                    <label class="textArea-bottom" for="js-textArea">Message:</label><textarea name="message" placeholder="Type your message here..." id="js-textArea" onkeyup="resizeTextarea('js-textArea')" ></textarea>
+
+                    <input type="image" name="submit" src="images/Telegram.png" aria-label="Send message" alt="Send message" id="js-send-img" />
+
+                </form>
+                
+            </footer>
+
+
+        </main>
+
+    </section>
+
+
+<!-- <div class="Modal-overlay"></div> -->
+<div class="Modal" id="js-modal">
+	<form action="#">
+        <label for="js-fname" >Your name please:</label><input  id="js-fname" class="modal-input" type="text" name="fname" value=""><br>
+		<label for="js-email">Your email please:</label><input id="js-email" class="modal-input" type="email" name="Email" value=""><br>
+		<!--<input type="email" />-->
+		<button id="js-modal-login">login</button>
+	</form>
+	<button id="js-modal-close">Close</button>
+</div>
+
+    <link rel="stylesheet" type="text/css" href="styles/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata|Josefin+Sans" rel="stylesheet">
+    <script src="scripts/main.js" type="text/javascript"></script>
+</body>
+
+</html>
