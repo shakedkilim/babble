@@ -16,7 +16,7 @@
     "mocha": "^3.5.0"
   },
   "scripts": {
-    "test": "mocha test/server/main.js && http-server -p 8081 ./test/client ",
+    "test": "mocha test/server/test.js && http-server -p 8081",
     "start": "concurrently \" node server/main.js \" \" http-server -p 8080 ./client \" "
   },
   "repository": {

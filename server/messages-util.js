@@ -1,6 +1,6 @@
 
 
-window.Babble = {
+var Babble = {
                 
             //Data to save all chat logs and methods    
             messages: new Array() ,
@@ -8,6 +8,7 @@ window.Babble = {
             userCount:0,
             //
 
+            // register user
             register: function(userInfo){
 
                 var usr;
@@ -35,7 +36,7 @@ window.Babble = {
                 }
 
             },
-
+            // get chat messages
             getMessages: function(counter, callback){
 
                 var res;
@@ -43,7 +44,7 @@ window.Babble = {
                 if(res!="")
                         callback( JSON.parse(res) );                      
             },
-
+            // post a new message
             postMessage: function(message , callback){
 
                 var res;
@@ -54,7 +55,7 @@ window.Babble = {
             },
 
             idNum: 42,
-
+            // delete a chat message
             deleteMessage: function(id, callback){
 
                 var res;
@@ -63,7 +64,7 @@ window.Babble = {
                         callback(JSON.parse(res));
 
             },
-
+            // get chat statues - number of users and messages
             getStats: function(callback){
 
                 var res;
@@ -73,22 +74,71 @@ window.Babble = {
             },
 
             messages: new Array() ,
+
             users: new Array(),
+
             userCount:0
 
                 
-    }
-
-
-var messages = {
-
-    addMessage: function(message){
+};
 
 
 
-    }
+/**
+ * addMessage
+ * Add message to server data 
+ * @param {*} message 
+ */
+function addMessage(message){
+    
+    message.id = Babble.idNum++;
+    (Babble.messages).push(message);
 
+    return message.id;
 }
 
 
+/**
+ * getMessages
+ * Get messages from server data
+ * @param {*} counter 
+ */
+function getMessages(counter){
+
+    if( counter == 0 ){
+
+        Babble.messages = [];
+        return Babble.messages;
+
+    } 
+
+    return Babble.messages;
+
+}
+
+/**
+ * deleteMessage
+ * Delete requested message by ID
+ * @param {*} id 
+ */
+function deleteMessage(id){
+
+    var flag = false , index = 0;
+    for( var i = 0; i <  Babble.messages.length ; i++ ){
+
+        if(Babble.messages[i].id === id){
+            flag = true;
+            index = i;
+        } 
+
+    }
+
+    if(flag){
+        (Babble.messages).splice( index ,1);
+    }
+    
+
+}
+
+module.exports = {Babble,addMessage,getMessages,deleteMessage};
 

@@ -9,7 +9,7 @@
 function appendProfileImg(figure,link) {
 
         var x = document.createElement("IMG");
-        if(link.substring(link.length-4, link.length) == 'png'){
+        if(link.substring(link.length-4, link.length) == '.png'){
                 x.setAttribute("src", link); // anonymous picture link
         } else{
                 x.setAttribute("src", "https://www.gravatar.com/avatar/" + link + "?s=200"  );
@@ -93,7 +93,7 @@ function formAdjust(o) {
                 var msg = new Message(usr.userInfo.name,serialize(form).substring(8,serialize(form).lastIndexOf("&")),(timestamp),usr.userInfo.email,'',Babble.idNum);
                 textArea.style.height="";
                 form.style.height="";
-                footer.style.height="5%";
+                // footer.style.height="6%";
 
                 Babble.postMessage(msg,function(result){
 
@@ -155,11 +155,7 @@ function formAdjust(o) {
                
                 Babble.getMessages( msgCount , function(result){
 
-                        //console.log("!!!");
-                        //console.log(result);
-
-                        // result = requestPoll({method: "GET",action: "http://localhost:9000/messages?counter="+msgCount})
-                        // console.log(result);
+                        
                         if( result !== "" && result !== 'Thank you' && localStorage.length !== 0){
 
                                 if (typeof(Storage) !== "undefined") {
@@ -181,29 +177,6 @@ function formAdjust(o) {
 
                 });
                         
-
-                /*requestPoll({
-
-                        method: "GET",
-                        action: "http://localhost:9000/stats",
-
-                }).then( function(result) {
-
-                        if(result !== undefined )
-                        {
-
-                                document.getElementById('js-usr-count').innerHTML = 0;
-
-                                if(result != "Thank you" && result != undefined){
-                                        result = JSON.parse(result);
-                                        document.getElementById('js-usr-count').innerHTML = result.userCount;
-                                        document.getElementById('js-msg-count').innerHTML = (result.messages).length;
-                                } else{
-                                        document.getElementById('js-usr-count').innerHTML = usrCount;
-                                }
-                        }
-                });
-                */
 
                 Babble.getStats(function(result){
 
@@ -352,9 +325,9 @@ function formAdjust(o) {
             this.text = text;
             this.time = time;
             this.mail = mail;
-            this.link = link || 'https://pbs.twimg.com/profile_images/453956388851445761/8BKnRUXg.png';
+            this.link = link || 'images/anonymous.png' //'https://pbs.twimg.com/profile_images/453956388851445761/8BKnRUXg.png';
             this.id = id;
-
+               
         }
 
         /**
@@ -406,10 +379,10 @@ function formAdjust(o) {
                 chat.innerHTML=''; // clear chat before updating
 
                 //document.getElementById('js-msg-count').innerHTML = '';
-                document.getElementById('js-msg-count').innerHTML = (babble.messages).length; // update message counter in display
+                document.getElementById('js-msg-count').innerHTML = (babble).length; // update message counter in display
 
                 // create elements for each message in data object from server
-                for(var i=0; i < (babble.messages).length ; i++)
+                for(var i=0; i < (babble).length ; i++)
                 {
                       
                       entry = document.createElement('li');
@@ -425,7 +398,7 @@ function formAdjust(o) {
                       wrap1 = document.createElement('header');
                       wrap2 = document.createElement('article');
 
-                      appendProfileImg(figure,(babble.messages)[i].link); // photo link
+                      appendProfileImg(figure,(babble)[i].link); // photo link
 
                       entry.appendChild(figure);
                       entry.appendChild(article);
@@ -434,11 +407,11 @@ function formAdjust(o) {
                       para2 = document.createElement("strong");
 
 
-                      para2.appendChild(document.createTextNode((babble.messages)[i].name)); // name
+                      para2.appendChild(document.createTextNode((babble)[i].name)); // name
                       para1.appendChild(para2);
                       wrap1.appendChild(para1);
                       
-                      time = timeConverter((babble.messages)[i].time);
+                      time = timeConverter((babble)[i].time); // convert from UNIX time
 
                       para2 = document.createElement("time");
                       para2.appendChild(document.createTextNode(time)); // message time
@@ -448,7 +421,7 @@ function formAdjust(o) {
                       close.setAttribute("aria-label","Close message");
 
                       x = document.createElement("img");
-                      //x.setAttribute("src", "/client/images/close.gif" );
+                      
                       x.setAttribute("src", "images/close.gif" );
                       x.setAttribute("align", "right" );
                 
@@ -461,7 +434,7 @@ function formAdjust(o) {
                       para3 = document.createElement("p");
                       wrap1.appendChild(para3);
 
-                      text = (babble.messages)[i].text; // message text
+                      text = (babble)[i].text; // message text
 
                       // handle punctuation marks
                       if( text != '' && text != undefined ){
@@ -556,7 +529,7 @@ function formAdjust(o) {
 
         /**
          * deleteMessage
-         * 
+         * Delete the requested message
          * @param {*} liArray : li array
          * @param {*} i : index
          */
@@ -605,6 +578,7 @@ function formAdjust(o) {
 
                                 if(localStorage.length == 0){
                                         document.getElementById("js-modal").style.display = "block";
+                                        document.getElementsByClassName("Modal-overlay")[0].style.display = "block";
                                 }
                                 else{
 
@@ -672,13 +646,15 @@ function formAdjust(o) {
 
         });
 
-        /**
-         * Event listener when user discards popup modal and continues as annonymous
-         */
-        document.getElementById("js-modal-close").addEventListener("click", function(){
+                /**
+                 * Event listener when user discards popup modal and continues as annonymous
+                 */
+                document.getElementById("js-modal-close").addEventListener("click", function(){
+                
 
                 var usr;
                 document.getElementById("js-modal").style.display = "none";
+                document.getElementsByClassName("Modal-overlay")[0].style.display = "none";        
 
                 if (typeof(Storage) !== "undefined") {
                         // Code for localStorage/sessionStorage.
@@ -712,10 +688,12 @@ function formAdjust(o) {
             userCount:0,
             //
 
+            // register user
             register: function(userInfo){
 
                 var usr;
                 document.getElementById("js-modal").style.display = "none";
+                document.getElementsByClassName("Modal-overlay")[0].style.display = "none";
 
                 if (typeof(Storage) !== "undefined") {
                         // Code for localStorage/sessionStorage.
@@ -739,7 +717,7 @@ function formAdjust(o) {
                 }
 
             },
-
+            // get chat messages
             getMessages: function(counter, callback){
 
                 var res;
@@ -747,18 +725,18 @@ function formAdjust(o) {
                 if(res!="")
                         callback( JSON.parse(res) );                      
             },
-
+            // post a new message
             postMessage: function(message , callback){
 
                 var res;
                 res = httpRequest("POST","http://localhost:9000/messages",message);
                 if(res!="")
-                        callback( {id: String(Babble.idNum++)} );
+                        callback( {id: String(Babble.idNum)} );
                 
             },
 
             idNum: 42,
-
+            //delete a chat message
             deleteMessage: function(id, callback){
 
                 var res;
@@ -767,14 +745,20 @@ function formAdjust(o) {
                         callback(JSON.parse(res));
 
             },
-
+            // get chat statues - number of users and messages
             getStats: function(callback){
 
                 var res;
                 res = httpRequest("GET","http://localhost:9000/stats");
                 if(res!="")
                         callback(JSON.parse(res));
-            }
+            },
+
+            messages: new Array() ,
+
+            users: new Array(),
+
+            userCount:0
 
                 
         }
