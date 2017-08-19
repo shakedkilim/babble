@@ -104,16 +104,22 @@ the text inside until a max of 300px and then an inner scrollbar appears
 - Focused/hovered message has a gray background and the delete button appears
 - Chat-room name is aligned left
 - Chat-room stats are aligned right
+
 ● Anonymous user design -
  https://drive.google.com/open?id=0B42daK8eCfktZzJvdXNBQWVsSVE
+ 
 ● User register modal design -
 https://drive.google.com/open?id=0B42daK8eCfktVmRvNzdYYVVkREE
+
 Mobile Design
 ● PSD:
 https://drive.google.com/open?id=0B42daK8eCfktZTBTWWJHSjN4QXlSQWtKS05qYkFpeTNLdktB
+
 ● Mobile breakpoints (mobile first)
 ○ 320 (0-320)
 ○ 638 (320-638, 638-?)
+
+
 ## HTML5 Semantics/Usability/Accessibility
 - Page/tab title should be “Vegans - Babble”
 - URL should be http://username.github.io/babble/#/vegans
