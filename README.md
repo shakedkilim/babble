@@ -185,6 +185,7 @@ ML5 )
 ● /images
 
 ○ ...
+
 ● /scripts
 
 ○ main.js
@@ -210,10 +211,16 @@ ML5 )
 ○ test.js
 
 ● NOTE: a code similarity checker will be used
+
 ● Should be able to start your project with npm start
+
 ○ The server will start on port 9000
+
 ○ The client will start on port 8080
+
 ● Should be able to test your project with npm test
+
 ○ Server tests will be run by mocha
+
 ○ Client tests will be available in http://localhost:8081/test/client
 
