@@ -167,27 +167,48 @@ ML5 )
 - No horizontal scroll on any screen size
 
 ## Submission
+
  Github username in Contacts List should be present and valid (attention: case sensitive )
+ 
 ● Exact repository name: babble
+
 ● Folder structure
+
 ○ /babble
+
 ■ /client
+
 ● /styles
+
 ○ main.css
+
 ● /images
+
 ○ ...
 ● /scripts
+
 ○ main.js
+
 ● index.html
+
 ■ /server
+
 ● main.js
+
 ● messages-util.js
+
 ■ /test
+
 ● /client
+
 ○ test.js
+
 ○ index.html
+
 ● /server
+
 ○ test.js
+
 ● NOTE: a code similarity checker will be used
 ● Should be able to start your project with npm start
 ○ The server will start on port 9000
