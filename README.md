@@ -15,10 +15,15 @@
 - User can discard and continue as anonymous
 - Non-persistent (no db - all messages erased after server restart)
 - Client-side persistence:
+
     ○ Typed text in new message textarea
+    
     ○ Email address / preference to be anonymous
+    
 - Chat-room stats:
+
 ○ Number of connected users
+
 ○ Number of messages
 
 ## Implementation
