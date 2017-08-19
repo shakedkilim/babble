@@ -93,7 +93,7 @@ function formAdjust(o) {
                 var msg = new Message(usr.userInfo.name,serialize(form).substring(8,serialize(form).lastIndexOf("&")),(timestamp),usr.userInfo.email,'',Babble.idNum);
                 textArea.style.height="";
                 form.style.height="";
-                // footer.style.height="6%";
+                footer.style.height="8%";
 
                 Babble.postMessage(msg,function(result){
 
