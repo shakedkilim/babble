@@ -23,12 +23,12 @@
         </form>
 
     </footer>
-
+    <div class="Modal-overlay"></div> 
     <div class="Modal" id="js-modal">
         <form action="#">
             <label for="js-fname" >Your name please:</label><input  id="js-fname" class="modal-input" type="text" name="fname" value=""><br>
             <label for="js-email">Your email please:</label><input id="js-email" class="modal-input" type="email" name="Email" value=""><br>
-            <!--<input type="email" />-->
+			
             <button id="js-modal-login">login</button>
         </form>
         <button id="js-modal-close">Close</button>
@@ -46,8 +46,8 @@
     <script>mocha.setup('bdd')</script>
 
     <!-- load code you want to test-->
-    <!-- <script src="../scripts/main.js"></script> -->
-    <script src="testedClient.js"></script>
+    <script src="../../client/scripts/main.js"></script>
+   
 
     <!-- load your test files -->
     <script src="test.js"></script>

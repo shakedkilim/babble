@@ -218,7 +218,7 @@ var server = http.createServer(function (request, response) {
         response.setHeader("Access-Control-Allow-Methods", 'GET,OPTIONS,POST,DELETE');
 
 
-        
+
         if (request.method === 'GET') {
                 var url = urlUtil.parse(request.url);
                 var data = queryUtil.parse(url.query);
@@ -254,17 +254,17 @@ var server = http.createServer(function (request, response) {
                                 response.writeHead(200, { "Content-Type": "application/json" });
                                 response.end(JSON.stringify(messages.getMessages(Babble.messages.length + 1)));
 
-                        } else if( (url.path) === '/messages' || !isNaN((url.path).substring((url.path).lastIndexOf('/') + 1, (url.path).length)) ){
+                        } else if ((url.path) === '/messages' || !isNaN((url.path).substring((url.path).lastIndexOf('/') + 1, (url.path).length))) {
 
                                 response.writeHead(405);
                                 response.end();
 
-                        }else if (!(url.path).includes("messages?counter=") || isNaN((url.path).substring((url.path).indexOf('=') + 1, (url.path).length))) {
+                        } else if (!(url.path).includes("messages?counter=") || isNaN((url.path).substring((url.path).indexOf('=') + 1, (url.path).length))) {
 
                                 response.writeHead(400);
                                 response.end();
 
-                        } 
+                        }
 
                 } else if ((url.path) === ("/stats")) { // update user stats
 
@@ -308,17 +308,17 @@ var server = http.createServer(function (request, response) {
                                 response.writeHead(200);
                                 response.end('Thank you');
                         });
-                } else if( (url.path) === ("/stats") ){
+                } else if ((url.path) === ("/stats")) {
 
                         response.writeHead(405);
                         response.end();
 
-                } else if( (url.path) !== ("/messages") ){
+                } else if ((url.path) !== ("/messages")) {
 
                         response.writeHead(405);
                         response.end();
 
-                }else {
+                } else {
 
                         response.writeHead(404);
                         response.end();
@@ -345,7 +345,7 @@ var server = http.createServer(function (request, response) {
                                 response.end();
                         }
 
-                } else if(url.path === "/stats"){
+                } else if (url.path === "/stats") {
 
                         response.writeHead(405);
                         response.end();
