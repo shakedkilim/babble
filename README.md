@@ -3,9 +3,13 @@ Babble - Project Requirements
 Functionality
 
 Web-based responsive chat
+
  One room
+ 
  Content open to everyone
+ 
  User can type a new message and submit to room
+ 
  New messages appear at the bottom
  User can delete his own messages
  User is defined by email address
