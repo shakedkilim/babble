@@ -56,14 +56,23 @@ Client-Server API (RESTful, see link )
 ```
 
 - Server should handle these errors and send appropriate status code:
+
 ○ 404 - for non-existent URLs (not found)
+
 -- e.g. GET / moshe
+
 ○ 400 - when the sent data is bad (bad request)
+
 -- e.g. GET /messages? shuki =5
+
 -- e.g. GET /messages?counter= hello
+
 ○ 405 - when the HTTP method is bad for certain URL (method not allowed)
+
 -- e.g. POST /stats
+
 ○ 204 - for OPTIONS request (sometimes sent automatically by the browser)
+
 
 ## Client API
 - You should implement these methods:
