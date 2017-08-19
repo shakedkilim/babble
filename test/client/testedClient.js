@@ -120,34 +120,6 @@ function requestPoll(props) {
         
 }
 
-// window.Babble = new Util("Shaked Kilim","Shakedkiim@gmail.com");
-
-// window.Babble.register( { name: "Shaked Kilim" , mail: "Shakedkiim@gmail.com" } );
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /**
  * append profile pic on figure at a chat message 
@@ -157,7 +129,7 @@ function requestPoll(props) {
 function appendProfileImg(figure,link) {
 
         var x = document.createElement("IMG");
-        if(link.substring(link.length-4, link.length) == 'png'){
+        if(link.substring(link.length-4, link.length) == '.png'){
                 x.setAttribute("src", link); // anonymous picture link
         } else{
                 x.setAttribute("src", "https://www.gravatar.com/avatar/" + link + "?s=200"  );
@@ -167,6 +139,14 @@ function appendProfileImg(figure,link) {
         x.setAttribute("alt", "");
 
         figure.appendChild(x);
+}
+
+// adjust chat footer
+if( screen.height <= (720) ){
+        document.getElementById('js-page-footer').style.height = "8%";
+}
+else {
+        document.getElementById('js-page-footer').style.height = "5%";
 }
 
 // functions for adjusting textarea
@@ -271,124 +251,6 @@ function backgroundHover(backgroundArray,i){
                 backgroundArray[i].style.backgroundColor = "rgb(235,237,236)";
 
         }
-}
-
-/**
- * appendChat
- * Create messages in display
- * Receives data object from server
- */
-function appendChat(babble){
-
-        var chat = document.getElementById('js-chat-list');
-        var entry;
-        var figure;
-        var usr;
-        var x,close;
-        var tab = 1;
-        var background;
-
-        var closeArray,backgroundArray,liArray;
-
-        var text;
-        var article;
-        var mail;
-        var name;
-        var wrap;
-        var wrap1;
-        var wrap2;
-
-        var para1;
-        var para2;
-        var para3;
-
-        chat.innerHTML=''; // clear chat before updating
-        
-
-        babble = JSON.parse(babble);
-
-        document.getElementById('js-msg-count').innerHTML = '';
-        document.getElementById('js-msg-count').innerHTML = (babble.messages).length; // update message counter in display
-
-        // create elements for each message in data object from server
-        for(var i=0; i < (babble.messages).length ; i++)
-        {
-                
-                entry = document.createElement('li');
-                entry.className = "li-message";
-
-                wrap = document.createElement('div');
-                wrap.tabIndex = tab++; // for tab key
-
-                figure = document.createElement('figure');
-
-                article = document.createElement('article');
-                
-                wrap1 = document.createElement('header');
-                wrap2 = document.createElement('article');
-
-                appendProfileImg(figure,(babble.messages)[i].link); // photo link
-
-                entry.appendChild(figure);
-                entry.appendChild(article);
-
-                para1 = document.createElement("cite");
-                para2 = document.createElement("strong");
-                
-                para2.appendChild(document.createTextNode((babble.messages)[i].name)); // name
-                para1.appendChild(para2);
-                wrap1.appendChild(para1);
-                
-
-
-                para2 = document.createElement("time");
-                para2.appendChild(document.createTextNode((babble.messages)[i].time)); // message time
-                wrap1.appendChild(para2);
-
-                close = document.createElement("button"); // close button
-                close.setAttribute("aria-label","Close message");
-
-                x = document.createElement("img");
-                //x.setAttribute("src", "client/images/close.gif" );
-                x.setAttribute("align", "right" );
-        
-                close.appendChild(x);
-                wrap1.appendChild(close);
-                close.tabIndex = tab++;
-                close.className = "close-message"; 
-
-                para3 = document.createElement("p");
-                wrap1.appendChild(para3);
-
-                text = (babble.messages)[i].text; // message text
-
-                // handle punctuation marks
-                if( text != '' && text != undefined ){
-                text = text.replace(/%0A/g, '');
-                text = text.replace(/%60/g, '`');
-                text = text.replace(/%2C/g, ',');
-                text = text.replace(/%2F/g, '/');
-                text = text.replace(/%20/g, ' ');
-                text = text.replace(/%3F/g, '?');
-                }
-                para3.appendChild(document.createTextNode(text));
-                wrap2.appendChild(para3);
-
-                wrap.appendChild(wrap1);
-                wrap.appendChild(wrap2);
-                wrap.className = "chat-message";
-
-                article.appendChild(wrap);
-
-                chat.appendChild(entry);
-
-        }
-
-        
-        closeArray = document.getElementsByClassName("close-message");
-        backgroundArray = document.getElementsByClassName("chat-message");
-        liArray = document.getElementsByClassName("li-message");
-        setFocusListeners(closeArray, backgroundArray , liArray);
 }
 
 

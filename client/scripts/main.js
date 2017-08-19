@@ -378,6 +378,7 @@ function formAdjust(o) {
 
                 chat.innerHTML=''; // clear chat before updating
 
+                
                 //document.getElementById('js-msg-count').innerHTML = '';
                 document.getElementById('js-msg-count').innerHTML = (babble).length; // update message counter in display
 

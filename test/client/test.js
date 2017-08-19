@@ -273,36 +273,5 @@ describe('Test Client', function() {
 
     });
 
-    describe('Check functions for chat elements', function() {
-
-        var babble = {
-
-            messages: [ {link:"ec0e99a6aec44416f646b7167f0e3a51",mail:"shakedkilim@gmail.com",name:"Shaked Kilim",text:"Hi!!!",time:"19:06"} , {link:"https://pbs.twimg.com/profile_images/453956388851445761/8BKRUXg.png",name:"Annonymous",text:"Hellow!!",time:"19:06"} , {link:"4a9ee3b48dd55d2edd0224cda8640d21",mail:"avidekel8@gmail.com",name:"Joe",text:"Testing%20testing!!%20one%20two%20three!!",time:"19:10"} ],
-            users: ["Shaked Kilim","Annonymous","Joe"],
-            userCount: 3
-
-        }
-
-        it('appendChat - Should create chat messges(No CSS included)', function() {
-
-            var chat = document.createElement('div');
-            chat.id = "js-chat-list";
-            document.querySelector("body").appendChild(chat);
-
-            var msgCount = document.createElement('div');
-            msgCount.id = "js-msg-count";
-            document.querySelector("body").appendChild(msgCount);
-
-            babble = JSON.stringify(babble);
-
-            appendChat(babble);
-
-            babble = JSON.parse(babble);
-            expect( document.getElementsByClassName("li-message").length ).to.equal( (babble.messages).length );
-
-        });
-
-    });
-
 
 });
