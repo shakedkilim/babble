@@ -22,9 +22,9 @@
     
 - Chat-room stats:
 
-○ Number of connected users
+    ○ Number of connected users
 
-○ Number of messages
+    ○ Number of messages
 
 ## Implementation
 - Server in NodeJS
