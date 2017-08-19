@@ -4,11 +4,11 @@ Functionality
 
 Web-based responsive chat
 
- One room
+ -One room
  
- Content open to everyone
+ -Content open to everyone
  
- User can type a new message and submit to room
+ -User can type a new message and submit to room
  
  New messages appear at the bottom
  User can delete his own messages
