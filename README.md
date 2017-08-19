@@ -1,32 +1,36 @@
 Babble - Project Requirements
+
 Functionality
-● Web-based responsive chat
-● One room
-● Content open to everyone
-● User can type a new message and submit to room
-● New messages appear at the bottom
-● User can delete his own messages
-● User is defined by email address
-● Avatars should be displayed automatically for email address
-● First load should display a modal popup to collect email address
-● User can discard and continue as anonymous
-● Non-persistent (no db - all messages erased after server restart)
-● Client-side persistence:
-○ Typed text in new message textarea
-○ Email address / preference to be anonymous
-● Chat-room stats:
-○ Number of connected users
-○ Number of messages
-Implementation
-● Server in NodeJS
-● Real-time updates with long polling: http://book.mixu.net/node/ch3.html
-● Automatic avatars with Gravatar: https://en.gravatar.com/site/implement/profiles/json/
-○ MD5 hash should be implemented on the server
-● Client-side persistence with LocalStorage:
-https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API/Using_the_Web_
-Storage_API
-○ exact (one) LocaStorage key: babble with these properties
-■ currentMessage:String
+
+Web-based responsive chat
+ One room
+ Content open to everyone
+ User can type a new message and submit to room
+ New messages appear at the bottom
+ User can delete his own messages
+ User is defined by email address
+ Avatars should be displayed automatically for email address
+ First load should display a modal popup to collect email address
+ User can discard and continue as anonymous
+ Non-persistent (no db - all messages erased after server restart)
+ Client-side persistence:
+ Typed text in new message textarea
+ Email address / preference to be anonymous
+ 
+ Chat-room stats:
+  Number of connected users
+  Number of messages
+  
+ Implementation
+  Server in NodeJS
+  Real-time updates with long polling: http://book.mixu.net/node/ch3.html
+  Automatic avatars with Gravatar: https://en.gravatar.com/site/implement/profiles/json/
+  MD5 hash should be implemented on the server
+  Client-side persistence with LocalStorage:
+  https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API/Using_the_Web_
+ Storage_API
+  exact (one) LocaStorage key: babble with these properties
+  currentMessage:String
 ■ userInfo:Object
 ● name:String
 ● email:String
