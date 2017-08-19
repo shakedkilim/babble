@@ -87,15 +87,15 @@ Unit Tests
 - Use the provided tests in your code, as is, don’t alter
 - Add additional tests for additional code you write, but don’t change the above API (you
 can add more methods if you need)
+
 ● In addition to Mocha tests will use Chai (assertion) and Sinon (spies).
 
 ● Client tests: https://hu-mar-17.slack.com/files/krulik/F6B4QNWBA/test_client_test_js.js
 ● Server tests: https://hu-mar-17.slack.com/files/krulik/F6BRMDR60/test_server_test_js.js
 
-Desktop Design
+## Desktop Design
 ● PNG: https://drive.google.com/open?id=0B42daK8eCfktZzJvdXNBQWVsSVE
-● PSD:
-https://drive.google.com/open?id=0B42daK8eCfktalo3aUtmN1RDNE5Wa1JCcG93SzRGZGM1TElr
+● PSD:https://drive.google.com/open?id=0B42daK8eCfktalo3aUtmN1RDNE5Wa1JCcG93SzRGZGM1TElr
 
 
 - Fluid: takes full width and height regardless of screen size
