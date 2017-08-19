@@ -78,7 +78,7 @@
                     <!-- Message: -->
                     <label class="textArea-bottom" for="js-textArea">Message:</label><textarea name="message" placeholder="Type your message here..." id="js-textArea" onkeyup="resizeTextarea('js-textArea')" ></textarea>
 
-                    <input type="image" name="submit" src="images/Telegram.png" aria-label="Send message" alt="Send message" id="js-send-img" />
+                    <input type="image" name="submit" src="images/Telegram.gif" aria-label="Send message" alt="Send message" id="js-send-img" />
 
                 </form>
                 
@@ -90,16 +90,23 @@
     </section>
 
 
-<!-- <div class="Modal-overlay"></div> -->
-<div class="Modal" id="js-modal">
-	<form action="#">
-        <label for="js-fname" >Your name please:</label><input  id="js-fname" class="modal-input" type="text" name="fname" value=""><br>
-		<label for="js-email">Your email please:</label><input id="js-email" class="modal-input" type="email" name="Email" value=""><br>
-		<!--<input type="email" />-->
-		<button id="js-modal-login">login</button>
-	</form>
-	<button id="js-modal-close">Close</button>
-</div>
+    <div class="Modal-overlay"></div> 
+    <article class="Modal" id="js-modal">
+        <form action="#">
+            <header><h1>Who are you?</h1></header>
+            <section class="modal-input-name"><label for="js-fname" aria-label="Type your name here">Full name:</label><input class="modal-text-box input-name" id="js-fname" type="text" name="fname" value=""></section>
+            <section class="modal-input-mail"><label for="js-email"aria-label="Type your email here">Email:</label><input class="modal-text-box input-mail" id="js-email" type="email" name="Email" value=""></section>
+            
+            <div class="modal-input-button">
+                <div class="flex-gap"></div>
+                <button id="js-modal-close" class="close-button" aria-label="Close and log in as annonymous" >Stay Anonymous</button>
+                <button id="js-modal-login" class="login-button" aria-label="Login" >Save</button>
+
+            </div>
+            
+        </form>
+        
+    </article>
 
     <link rel="stylesheet" type="text/css" href="styles/main.css">
     <link href="https://fonts.googleapis.com/css?family=Inconsolata|Josefin+Sans" rel="stylesheet">

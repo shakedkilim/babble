@@ -8,6 +8,32 @@
             
     }
 
+    .chat::-webkit-scrollbar-track
+    {
+      -webkit-box-shadow: inset 0 0 0.2em rgba(0,0,0,0.3);
+      box-shadow: inset 0 0 0.2em rgba(0,0,0,0.3);
+      border-radius: 10em;
+      background-color: rgb(255, 255, 255);
+      
+      margin-bottom: 3em;
+      right: -2em;
+    }
+
+    .chat::-webkit-scrollbar
+    {
+
+      width: 0.7em;
+      
+    }
+
+    .chat::-webkit-scrollbar-thumb
+    {
+      border-radius: 10px;
+      -webkit-box-shadow: inset 0 0 0.3em rgba(0,0,0,.3);
+      box-shadow: inset 0 0 0.15em rgba(0,0,0,.3);
+      background-color: rgb(235,237,236);
+    }
+
     header > time{
 
       display: inline;
@@ -72,6 +98,12 @@
 
     }
 
+    .chat-message{
+
+        border: 0.01em solid gray;
+
+    }
+
     .close-message:focus{
 
         border: 0.01em solid black;
@@ -81,7 +113,7 @@
 
     input{
  
-        flex: 0.7;
+        
         margin-top: auto;
         margin-bottom: auto;
         margin-right: auto;
@@ -98,8 +130,7 @@
       margin-left: 0.8em;
       margin-top: 0.8em;
       margin-bottom: 0.8em;
-      display: flex;
-      flex-direction: column;
+      
       background-color: rgb(255, 255, 255);
       border-radius: 1em;
       max-width: 600px;
@@ -118,15 +149,6 @@
 
     }
 
-
-    div > article{
-
-      display: flex;
-      flex-direction: row;
-      flex:2;
-
-    }
-    
     article > p{
 
       white-space:pre-line;
@@ -137,9 +159,270 @@
 
     }
 
-/* In case of over minimized mobile device size */
-/*@media screen and (max-height:737px) and (max-width:440px){*/
+/* In case of over minimized device size */
+@media screen and (min-width:320px){
+
+  article > div{
+
+    display: flex;
+    flex-direction: column;
+
+  }
+
+  div > article{
+
+      display: flex;
+      flex-direction: row;
+      flex:2;
+
+  }
+
+  .page-footer{
+
+    display: flex;
+    flex: 0 0 auto;
+    flex-direction: row;
+
+  }
+
+  .input{
+
+    flex: 0.7;
+
+  }
+
+  .page {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .flex-container-upper-header {
+    flex: 0 0 auto;
+  }
+
+  section,main{
+
+    flex: 9 1 auto;
+
+  }
+
+  nav{
+      flex: 2 1 auto;
+  }
+
+  .flex-container-sidebar-and-chat {
+      display: -webkit-flex;
+      display: flex;
+  }
+
+  .flex-container-chat {
+    display: -webkit-flex;
+    -webkit-flex-direction: column;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .chat-top-footer{
+
+    flex: 10;
+    display: flex;
+    flex-direction: row;
+    
+  }
+
+  .flex-container-upper-header{
+
+    display: flex;
+    flex-direction: row;
+
+  }
+
+  .flex-container-upper-header > div{
+
+    flex: 3.5;
+
+  }
+
+  .flex-container-upper-header > header{
+
+    flex: 1;
+  }
+
+  .flex-container-upper-header > figure {
+
+    flex:1;
+
+  }
+
+
+  .chat {
+
+    flex: 110;
+
+  }
+
+  .message-count {
+    flex: 1;
+  }
+
+  .user-count {
+
+    flex: 1;
+  }
+
+  .img-count-number {
+
+    flex-grow: 1;
+  }
+
+  form {
+    flex-grow: 95;
+    display: block;
+  }
+
+  h1{
+
+    flex-grow: 99;
+  }
+
+  a{
+    flex-grow: 1;
+  }
+
+  dl{
+
+    flex-grow: 1;
+    display: flex;
+    flex-direction: row;
+    
+  }
+
+  dd{
+    flex-grow: 1;
+    display: flex;
+    flex-direction: row;
+  }
+
+  li{
+    display: flex;
+    flex-direction: row;
+  }
+
+  ol > li > figure > img {
+
+    flex: 1;
+  }
+
+  li > figure{
+
+    flex: 1;
+
+  }
+
+  
+  li > article{
+
+      flex: 30;
+  }
+
+  textarea {
+
+    flex: 6;
+  
+  }
+
+  article > form{
+
+    display: flex;      
+    flex-direction: column;
+
+  }
+
+  .modal-input-button{
+
+    display: flex;
+    flex-direction: row;  
+    margin-top: 1.4em; 
+  }
+
+  .modal-input-name{
+
+   display: flex;
+   flex-direction: row;  
+
+  }
+  
+  .modal-input-mail{
+
+   display: flex;
+   flex-direction: row;  
+
+  }
+
+  
+
+  form > header{
+    flex:1;
+  }
+
+  .flex-gap{
+    flex:10;
+  }
+
+  
+
+  .login-button{
+    flex: 2.5; 
+  }
+
+  form {  
+    display: flex;
+  } 
+
+  .Modal{
+    width: 25em;
+  }
+
+}
+
+/* In case of minimized mobile device size */
 @media screen and (max-width:638px) and (min-width:320px){
+
+    .modal-input-name {
+        display: block;
+        
+    }
+
+    .modal-input-mail {
+      display: block;
+    }
+
+    .modal-text-box{
+        margin-top: 0.8em;
+    }
+
+
+    .input-name , .input-mail{
+
+      width: 50%;
+
+    }
+
+    .input-mail{
+      margin-left: 0em;
+    }
+
+    section > label{
+
+        display: block;
+
+    }
+
+    form > section{
+
+      margin-top: 2em;
+
+    }
 
     article > p{
 
@@ -252,6 +535,51 @@
     
     }
 
+    .Modal{
+      height: 90%;
+    }
+    
+    .Modal-overlay{
+
+      background-color: rgba( 0 , 0, 0, 0.5);
+    }
+
+    .modal-input-button{
+
+      margin-top: 33.4em;
+      margin-right: 2.55em; 
+    }
+
+}
+
+/*In case of maximized width devices*/
+@media screen and (min-width:639px){
+
+  .Modal{
+    max-height: 13em;
+  }
+
+  .Modal-overlay{
+    background-color: rgba( 0 , 0, 0, 0.5);
+  }
+
+  .modal-input-mail > input{
+    margin-left: 2.09em;  
+  }
+
+  .modal-input-mail , .modal-input-name{
+    margin-top: 1.1em;
+
+  }
+
+  .modal-input-button{
+    margin-right: 0.875em;
+  }
+    
+  .close-button{
+    flex: 5;
+  }
+
 }
 
 article > div > header{
@@ -278,14 +606,8 @@ p {
   margin-bottom: 1em;
 }
 
-.page {
-  display: flex;
-  flex-direction: column;
-}
-
 
 .flex-container-upper-header {
-  flex: 0 0 auto;
   background-color: rgb(53, 55, 68); 
   height: 5em;
   border: 0.01em solid rgba(36, 44, 60, 0.28);
@@ -294,22 +616,17 @@ p {
 
 
 .page-footer {
-  display: flex;
-  flex: 0 0 auto;
+  
   background-color: #ffffff;
   border: 0.01em solid #ffffff;
-  height: 5%;
+  height: 5.3%;
   width: 99.8%;
   overflow: hidden;
-  flex-direction: row;
 
 }
 
 
-
 section,main{
-
-  flex: 9 1 auto;
   position: relative;/* need this to position inner content */
   overflow-y: auto;
   overflow: hidden;
@@ -318,21 +635,18 @@ section,main{
 
 
 
-nav{
 
+nav{
     background-color: rgb(97, 210, 144);  /* #284b8e #e6e6e6 #d6d6c2 */
     border: 0.01em solid rgba(36, 44, 60, 0.28);
-    flex: 2 1 auto;
+    
     position: relative;/* need this to position inner content */
     overflow-y: auto;
     min-width: 15%;
 
 }
 
-.flex-container-sidebar-and-chat {
-    display: -webkit-flex;
-    display: flex;
-}
+
 
 .flex-container-sidebar-and-chat > h1{ /* show content only to screen readers */
     position:absolute;
@@ -343,100 +657,71 @@ nav{
     overflow:hidden;
 }
 
+
 .flex-container-chat {
-    display: -webkit-flex;
-    -webkit-flex-direction: column;
-    display: flex;
-    flex-direction: column;
     background-color: rgb(246, 246, 246);  /* #284b8e #e6e6e6 #d6d6c2 */
 }
 
 
 .chat-top-footer{
-
   background-color: rgb(246, 246, 246);  /* #284b8e #e6e6e6 #d6d6c2 */
-  flex: 10;
-  display: flex;
-  flex-direction: row;
   min-height: 5em;
   
 }
 
-.flex-container-upper-header{
-
-  display: flex;
-  flex-direction: row;
-
-}
-
-.flex-container-upper-header > div{
-
-  flex: 3.5;
-
-
-}
 
 .flex-container-upper-header > header{
-
-  flex: 1;
 
   background: none; 
   border: none;
 
 }
 
-.flex-container-upper-header > figure {
-
-   flex:1;
-
-}
 
 .chat {
-
-  flex: 110;
   background-color: rgb(246, 246, 246);
   overflow-y: auto;
+  margin-right: 1em;
   
 }
 
-.message-count {
 
+.message-count {
   margin-right: 0.5em;
   margin-top: 1em;
-  flex: 1;
+  
   position:  right;
   height: 1.5em;
   width: 1.5em;
 
 }
+
 
 .user-count {
-
   margin-right: 0.5em;
   margin-top: 1em;
-  flex: 1;
+  
   position:  right;
   height: 1.5em;
   width: 1.5em;
 
 }
 
-.img-count-number {
 
-  flex-grow: 1;
+
+.img-count-number {
   position:  right;
   height: 5%;
   width: 5%;
 
 }
 
-form {
 
+form {
   margin-left: 0em;
-  flex-grow: 95;
-  display: flex;
- 
 }
+
+
 
 .textArea-bottom{
   
@@ -449,6 +734,31 @@ form {
 
 }
 
+@media screen and (max-height:884px) {
+
+  .modal-input-button {
+      margin-top: 10%;
+      font-size: 0.7em;
+      margin-right: 2.4em;
+  }
+
+  form > section > input{
+    width: 20em;
+  }
+
+
+
+}
+
+@media screen and (max-width:373px) {
+
+  .modal-input-button {
+      margin-top: 95%;
+      font-size: 1em;
+  }
+
+
+}
 
 /* In case of over maximized device size */
 @media screen and (min-height:738px) and (min-width:441px){
@@ -465,12 +775,13 @@ form {
     border: 0;
 
   }
+  
 
 }
 
-h1{
 
-  flex-grow: 99;
+
+h1{ 
   margin-left: 1%;
   color: #140F0F;
   font-size: 180%;
@@ -479,15 +790,11 @@ h1{
 
 a{
   position: relative;
-  flex-grow: 1;
 }
-
 
 
 textarea {
 
-    flex: 6;
-    
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
@@ -522,27 +829,24 @@ dt > span{
     visibility: hidden;
 }
 
+
 dl{
-  flex-grow: 1;
-  display: flex;
-  flex-direction: row;
+  
   margin-right: 1em;
+
 }
 
+
 dd{
-  flex-grow: 1;
-  display: flex;
-  flex-direction: row;
   margin-left: 1em;
   margin-right: 1em;
 }
 
-li{
 
-  display: flex;
-  flex-direction: row;
+li{
   margin-left: -3em;
   height: 2%;
+  margin-top: 0.45em;
 
 }
 
@@ -550,27 +854,21 @@ ol{
   margin-top: -1em;
 }
 
+
 ol > li > figure > img {
 
-  flex: 1;
   height: 3em;
   width: 3em;
   margin-top: auto;
   margin-bottom: auto;
-
-
-}
-
-li > figure{
-
-    flex: 1;
+  border-radius: 10em;
 
 }
 
-li > article{
 
-    flex: 30;
-    margin-left: -2em;
+ 
+li > article{    
+    margin-left: -2.75em;
     overflow: hidden;
 
 }
@@ -583,16 +881,60 @@ li > article{
 	right: 0;
 	bottom: 0;
 	width: 80%;
-	max-width: 600px;
-	max-height: 300px;
+
+  max-width: 30em;
+  
 	margin: auto;
 	background-color: white;
 	padding: 20px;
-	box-shadow: 0 0 10px 0 black;
+  box-shadow: 0 0 10px 0 black;
+  background-color: rgb(249,249,249);
+
+}
+
+
+.modal-input-name , .modal-input-mail{
+  margin-right: -7em;
+  
+}
+
+
+form > header{
+
+  margin-bottom: -1.5em;
+  margin-top: -1.1em;
+
+}
+
+form > header > h1{
+  color: rgb(41,41,41);
+}
+
+section > label{
+  font-size: 140%;
+  color: rgb(97,97,97);
+}
+
+section > input{
+
+  font-size: 110%;
+  font-weight: bold;
+  border-radius: 0.35em;
+  width: 3em;
+  padding-left: 0.4em;
+  padding-top: 0.3em;
+  padding-bottom: 0.3em;
+  margin-right: -1.72em;
+
+}
+
+section > header > h1{
+  font-size: 200%;
 }
 
 .Modal-overlay {
-	background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+	
 	position: fixed;
 	width: 100%;
 	height: 100%;
@@ -604,11 +946,73 @@ li > article{
 	display: none;
 }
 
-.modal-input {
+.modal-text-box{
 
-  border: 0.1em solid black;
-  height: 1.3em;
+  border: 0.01em solid rgb(215,215,215);
+  border-radius: 0.6em;
+  height: 1em;
+  margin-left:0.1em;
+  color: rgb(32,39,41)
 }
 
 
+.close-button{
+  width: 16em;
+  margin-right: 0.8em;
+  height: 2.5em;
+
+} 
+
+
+
+
+
+.close-button{
+ border:0.11em solid #b7b7b7; -webkit-border-radius: 0.1875em; -moz-border-radius: 0.1875em;border-radius: 0.1em;font-size:0.75em;font-family:arial, helvetica, sans-serif; padding: 0.6em 0.625em 0.66em 0.625em; text-decoration:none; display:inline-block;font-weight:bold; color: rgb(32,39,41);
+ background-color: #d3d3d3; background-image: -webkit-gradient(linear, left top, left bottom, from(#d3d3d3), to(#707070));
+ background-image: -webkit-linear-gradient(top, #d3d3d3, #707070);
+ background-image: -moz-linear-gradient(top, #d3d3d3, #707070);
+ background-image: -ms-linear-gradient(top, #d3d3d3, #707070);
+ background-image: -o-linear-gradient(top, #d3d3d3, #707070);
+ background-image: linear-gradient(to bottom, #d3d3d3, #707070);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#d3d3d3, endColorstr=#707070);
+ border: none;
+}
+
+.close-button:hover{
+ border:0.0625em solid #a0a0a0;
+ background-color: #bababa; background-image: -webkit-gradient(linear, left top, left bottom, from(#bababa), to(#575757));
+ background-image: -webkit-linear-gradient(top, #bababa, #575757);
+ background-image: -moz-linear-gradient(top, #bababa, #575757);
+ background-image: -ms-linear-gradient(top, #bababa, #575757);
+ background-image: -o-linear-gradient(top, #bababa, #575757);
+ background-image: linear-gradient(to bottom, #bababa, #575757);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#bababa, endColorstr=#575757);
+ border: none;
+}
+
+.login-button {
+  background: #42d934;
+  background-image: -webkit-linear-gradient(top, #42d934, #0d8f1e);
+  background-image: -moz-linear-gradient(top, #42d934, #0d8f1e);
+  background-image: -ms-linear-gradient(top, #42d934, #0d8f1e);
+  background-image: -o-linear-gradient(top, #42d934, #0d8f1e);
+  background-image: linear-gradient(to bottom, #42d934, #0d8f1e);
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0em;
+  border: none;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 0.75em;
+  text-decoration: none;
+}
+
+.login-button:hover {
+  background: #bffc3c;
+  background-image: -webkit-linear-gradient(top, #bffc3c, #3cd934);
+  background-image: -moz-linear-gradient(top, #bffc3c, #3cd934);
+  background-image: -ms-linear-gradient(top, #bffc3c, #3cd934);
+  background-image: -o-linear-gradient(top, #bffc3c, #3cd934);
+  background-image: linear-gradient(to bottom, #bffc3c, #3cd934);
+  text-decoration: none;
+}
 
