@@ -51,6 +51,14 @@
       outline: none;
         
     }
+
+     form > button{
+        padding: 0;
+        border: none;
+        background: none;
+        /* width: 5em; */
+
+    } 
     
 
     header>button:focus{
@@ -119,7 +127,6 @@
         margin-right: auto;
         margin-left: auto;
         height:3em;
-        width: 5em;
         border: 0;
 
     }
@@ -771,7 +778,6 @@ form {
     margin-right: auto;
     margin-left: auto;
     height:3.3em;
-    width: 1em;
     border: 0;
 
   }
