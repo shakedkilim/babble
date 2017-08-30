@@ -71,14 +71,9 @@ var Babble = {
         res = httpRequest("GET", "http://localhost:9000/stats");
         if (res != "")
             callback(JSON.parse(res));
-    },
+    }
 
-    messages: new Array(),
-
-    users: new Array(),
-
-    userCount: 0
-
+    
 
 };
 
