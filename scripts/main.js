@@ -1,6 +1,7 @@
 'use strict';
 
 
+
 /**
  * append profile pic on figure at a chat message 
  * @param {*} figure : tag
@@ -590,6 +591,11 @@ function formAdjust(o) {
                                 else{
 
                                         usr = localStorage.getItem('babble' );
+                                        
+                                        if(!usr){
+                                                localStorage.setItem('babble', JSON.stringify( new Util("","") ) );
+                                        }
+
                                         usr = JSON.parse(usr);
 
                                         if( usr.userInfo.currentMessage != '' )
@@ -759,13 +765,9 @@ function formAdjust(o) {
                 res = httpRequest("GET","http://localhost:9000/stats");
                 if(res!="")
                         callback(JSON.parse(res));
-            },
+            }
 
-            messages: new Array() ,
-
-            users: new Array(),
-
-            userCount:0
+         
 
                 
         }
