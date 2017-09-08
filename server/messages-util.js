@@ -127,7 +127,7 @@ function deleteMessage(id) {
         }
 
     }
-
+    
     if (flag) {
         (Babble.messages).splice(index, 1);
     }
