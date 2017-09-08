@@ -1,6 +1,6 @@
 'use strict';
 
-
+localStorage.setItem('babble', JSON.stringify( new Util("","") ) );
 
 /**
  * append profile pic on figure at a chat message 
